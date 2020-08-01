@@ -1,0 +1,23 @@
+<div class="container" *ngIf="meal[0]">
+  
+  <h1>{{meal[0].strMeal}}</h1>
+  
+  <div class="meal">
+    <div class="meal-image"
+      [style.background-image]="'url(' + meal[0].strMealThumb + ')' | safe: 'style'">
+    </div>
+    
+    <div class="meal-video">
+      <iframe [src]="ytLink | safe: 'resourceUrl'" width="640" height="390"></iframe>
+    </div>
+
+    <div class="meal-table" [innerHTML]="mealIng"></div>
+
+    <div class="meal-instructions">
+      {{meal[0].strInstructions}}
+    </div>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+  
+  <div class="row head">
+    <h3 class="intro-text">Start here by selecting a meal type</h3>
+    <mat-form-field appearance="fill">
+      <mat-label>Meal type</mat-label>
+      <mat-select [(value)]="selected" (selectionChange)="onSelected()">
+        <mat-option *ngFor="let fc of foodCat" [value]="fc">
+          {{fc}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <div class="cards">
+    <div class="card" *ngFor="let meal of meals" [style.background-image]="'url(' + meal.strMealThumb + ')' | safe: 'style'">
+      <div class="card-info">
+        <div class="card-title">{{meal.strMeal}}</div>
+        <button mat-raised-button color="accent" routerLink="/meal/:id={{meal.idMeal}}">Details</button>
+      </div>
+    </div>
+ </div>
+
+
+</div>

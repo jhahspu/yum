@@ -7,6 +7,9 @@
 # Only exists if Bazel was run
 /bazel-out
 
+# Ignore testing
+/e2e
+
 # dependencies
 /node_modules
 
